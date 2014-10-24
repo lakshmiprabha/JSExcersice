@@ -1,0 +1,88 @@
+function updateUser()
+	{
+	console.log("inside updateUser");
+	var formObj=document.ProfilePageForm;
+	//setting the elements to user details object
+	var name=formObj.userName.value,
+	age=formObj.age.value,
+	phone=formObj.phone.value,
+	email=formObj.email.value,
+	address=formObj.address.value,
+	exp=/^[0-9]+$/;
+var userProfile=new UserDetails(name,age,phone,email,address);
+
+	console.log("userProfile " +userProfile["name"]);
+	console.log("userProfile " +userProfile["age"]);
+	console.log("userProfile " +userProfile["phone"]);
+	console.log("userProfile " +userProfile["email"]);
+	console.log("userProfile " +userProfile["address"]); 
+	
+var isValid=function validateUser()
+	{
+	var exp=/[0-9]$/;
+	console.log("userProfile****"+userProfile);
+	console.log("userProfile******" +userProfile["name"]);
+	console.log("userProfile*****" +userProfile["age"]);
+	console.log("userProfile*****" +userProfile["phone"]);
+	console.log("userProfile****" +userProfile["email"]);
+	console.log("userProfile****" +userProfile["address"]);
+	console.log(exp.test((userProfile["age"].value)));
+	
+	if((userProfile["name"]==" ")||(userProfile["age"]==0)||
+				(userProfile["phone"]==0) ||(userProfile["email"]==" ")||(userProfile["address"]== " "))
+		{
+			alert("Please enter all the necessary information to proceed further");
+			formObj.userName.focus();
+		}
+	else if(userProfile["name"].length >=50)
+		{
+			alert("Max characters allowed for Name is only 50");
+		}
+	else if(exp.test((userProfile["age"].value)))
+		{
+			alert("Please enter a valid age");
+		}
+	else if((userProfile["phone"].value.length >10)||(!exp.test((userProfile["phone"].value))))
+		{
+			alert("Please enter a valid phone number");
+		}
+	else if((userProfile["email"].value.length >30)||
+					(((userProfile["email"].value).indexOf('@')==-1)))
+		{
+		alert("Please enter a valid email address");
+		}	
+	else
+	{
+	return true;
+	}
+	}();
+if(isValid)
+{
+console.log("Hey welcome valid user");
+}
+
+}
+
+
+function checkEmail()
+{
+console.log("inside checkEmail");
+	if(formObj.email.value!="")
+	{
+	console.log("first iff check");
+	console.log("condition" +formObj.email.value.indexOf("@"));
+		if(formObj.email.value.indexOf("@")==-1)
+		{
+	
+			if(formObj.email.value.length >30)
+			{
+				alert("Email ids cannot be more than 30 characters. Please retype a valid email address");
+			}
+		}
+		else
+		{
+		alert("Please enter a valid email address");
+		}
+		
+	}
+}

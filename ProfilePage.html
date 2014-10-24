@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<title>
+		My Sample Book Application
+		</title>
+		<style>
+			header
+			{
+			background-color:grey;
+			color:white;
+			text-align:left;
+			padding:5px;	 
+			}
+			section 
+			{
+			width:1000px;
+			float:center;
+			padding:100px;	 	 
+			}
+		</style>
+	</head>
+		<body>
+			 <form name="ProfilePageForm" id="ProfilePageForm">
+					<header>
+						<table>
+							<tr>
+								<td>
+									<h1> My Book </h1>
+								</td>
+								<td>
+								<a href="SignInPage.html">Sign out</a>
+								</td>
+							</tr>
+						</table>
+					</header>
+					<p/><p/><p/><p/><p/><p/><p/><p/><p/>
+					<section>
+						<table align="center">
+							<tr>
+								<td>
+								<input type="text" value="Name" name="userName" onkeyup="checkUserName()"/></td></tr>
+								<tr>
+								<td>
+								<input type="text" value="Age" name="age" onkeyup="checkAge()"/></td></tr>
+								<tr>
+								<td>
+								<input type="text" value="Phone" name="phone"onkeyup="checkPhoneNumber()"/></td></tr>
+								<tr>
+								<td>
+								<input type="text" value="Email" name="email")"/></td></tr>
+								<tr>
+								<td>
+								<textarea name="address" rows="5",cols="25">
+										Address
+								</textarea
+								</td></tr>
+						</table>
+					</section>		
+			</form>  	
+		<button onclick="saveUserDetails()">Save</button>
+				<script src="ProfilePageJS.js">	</script>
+		</body>
+
+<html>
