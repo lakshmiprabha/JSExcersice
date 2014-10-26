@@ -91,7 +91,7 @@ var validPhoneRegX=/[0-9]$/
 	{
 		if(validPhoneRegX.test(formObj.phone.value))
 		{
-			if((!formObj.phone.value.length > 10))
+			if((formObj.phone.value.length >10))
 			{
 			alert("Phone numbers should have 10 digits. Please enter a valid phone number");
 			formObj.phone.value=""
@@ -118,7 +118,7 @@ function saveUserDetails()
 		phone=formObj.phone.value,
 		email=formObj.email.value,
 		address=formObj.address.value;
-if(checkUserName && checkAge && checkPhoneNumber )
+if(checkUserName && checkAge && checkPhoneNumber && checkEmail())
 {
 //console.log("condtion passs!!!!");
 var output = document.getElementById('output');
@@ -129,10 +129,9 @@ var output = document.getElementById('output');
 	console.log("name"+obj["name"]);
 	console.log("dataURL"+obj["dataURL"]);
 	userDetailsArray.push(obj);
-	for(var i=0;i<userDetailsArray.length;i++)
-	{
-	alert("User Profile Details saved successfully "+ userDetailsArray[i]["name"]);
-	}
+	alert("User Profile Details saved successfully "+ obj["name"]);
+	document.getElementById("ProfilePageForm").reset();
+	
 
 }
 }
@@ -153,3 +152,25 @@ console.log("inside image funcction");
     };
     reader.readAsDataURL(input.files[0]);
   };
+function checkEmail()
+{
+var isEmailValid=true;
+console.log("inside checkEmail");
+	if(formObj.email.value=="")
+	{
+	isEmailValid=false;
+	}
+	else
+	{
+		console.log("first iff check");
+		console.log("condition" +formObj.email.value.indexOf("@"));
+			if(formObj.email.value.indexOf("@")==-1)
+			{
+			alert("Please enter a valid email address");
+			isEmailValid=false;
+			formObj.email.value=""
+			formObj.email.focus();
+			}
+	}
+	return isEmailValid;
+}

@@ -4,23 +4,26 @@
 		My Sample Book Application
 		</title>
 		<style>
-			header
-			{
-			background-color:grey;
-			color:white;
-			text-align:left;
-			padding:5px;	 
+			h3 {color: grey}
+			.textbox{
+			size=50;
+			font-family: Arial, Helvetica, sans-serif;
+			font-style: normal;			
+			font-size:14;
 			}
-			section 
+			.textarea
 			{
-			width:1000px;
-			float:center;
-			padding:100px;	 	 
+			font-family: Arial, Helvetica, sans-serif;
+			font-style: normal;			
+			font-size:14;
+			}
+			.file{
 			}
 		</style>
 	</head>
 		<body>
 			 <form name="ProfilePageForm" id="ProfilePageForm">
+					
 					<header>
 						<table>
 							<tr>
@@ -38,21 +41,26 @@
 						<table align="center">
 							<tr>
 								<td>
-								<input type="text" value="Name" name="userName" onkeyup="checkUserName()"/></td></tr>
-								<tr>
+								<h3> Name</h3>
+								</td>
 								<td>
-								<input type="text" value="Age" name="age" onkeyup="checkAge()"/></td></tr>
+								<input class="textbox" type="text" name="userName" onkeyup="checkUserName()"/></td></tr>
 								<tr>
+								<td> <h3>Age</h3></td>
 								<td>
-								<input type="text" value="Phone" name="phone"onkeyup="checkPhoneNumber()"/></td></tr>
+								<input class ="textbox" type="text" name="age" onkeyup="checkAge()"/></td></tr>
 								<tr>
+								<td> <h3> Phone </h3></td>
 								<td>
-								<input type="text" value="Email" name="email")"/></td></tr>
+								<input class ="textbox" type="text" name="phone"onkeyup="checkPhoneNumber()"/></td></tr>
 								<tr>
+								<td><h3>Email</h3></td>
 								<td>
-								<textarea name="address" rows="5",cols="25">
-										Address
-								</textarea
+								<input class ="textbox" type="text" name="email" onchange="checkEmail()"/></td></tr>
+								<tr>
+								<td><h3>Address</h3></td>
+								<td>
+								<textarea class="textarea" name="address" rows="5",cols="25"></textarea>
 								</td></tr>
 								<tr> <td>
 								<input type='file' accept='image/*' onchange='openFile(event)'/></td></tr>
