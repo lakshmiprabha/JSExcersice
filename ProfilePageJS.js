@@ -1,12 +1,13 @@
 var userDetailsArray=new Array();
 
-function UserDetails(name,age,phone,email,address)
+function UserDetails(name,age,phone,email,address,dataURL)
 {
 this.name=name;
 this.age=age;
 this.phone=phone;
 this.email=email;
 this.address=address;
+this.dataURL=dataURL;
 }
 var formObj= document.ProfilePageForm;
 function checkUserName()
@@ -111,7 +112,6 @@ return isPhoneNoValid;
 
 function saveUserDetails()
 {
-
 //console.log("inside saveUserDetails");
 	var name=formObj.userName.value,
 		age=formObj.age.value,
@@ -121,12 +121,35 @@ function saveUserDetails()
 if(checkUserName && checkAge && checkPhoneNumber )
 {
 //console.log("condtion passs!!!!");
-	var obj = new UserDetails(name,age,phone,email,address);
+var output = document.getElementById('output');
+     var dataURL=output.src;
+	  var data=dataURL.split("base64,")[1];
+	  
+	var obj = new UserDetails(name,age,phone,email,address,data);
 	console.log("name"+obj["name"]);
+	console.log("dataURL"+obj["dataURL"]);
 	userDetailsArray.push(obj);
 	for(var i=0;i<userDetailsArray.length;i++)
 	{
-	console.log("name in array"+userDetailsArray[i]["name"]);
+	alert("User Profile Details saved successfully "+ userDetailsArray[i]["name"]);
 	}
+
 }
 }
+var openFile = function(event)
+{
+console.log("inside image funcction");
+    var input = event.target;
+	var dataURL;
+
+    var reader = new FileReader();
+    reader.onload = function(){
+	
+	  dataURL = reader.result;
+	  
+	 
+      var output = document.getElementById('output');
+      output.src = dataURL;
+    };
+    reader.readAsDataURL(input.files[0]);
+  };
