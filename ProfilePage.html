@@ -17,8 +17,13 @@
 			font-style: normal;			
 			font-size:14;
 			}
-			.file{
-			}
+			
+		input[type="file"]
+		{ 
+		width: 320px; height: 22px; margin: 0;width: 320px; height: 22px; margin: 0; border: 1px solid #777;
+  float: left; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;
+		
+		}
 		</style>
 	</head>
 		<body>
@@ -37,40 +42,49 @@
 						</table>
 					</header>
 					<p/><p/><p/><p/><p/><p/><p/><p/><p/>
+<table align= "right">
+<tr><td>
+							<img id ="output" src="noImage.jpg" width="152" height="229"></img></td></tr>
+</table>
 					<section>
 						<table align="center">
 							<tr>
 								<td>
-								<h3> Name</h3>
+								<h3> Name *</h3>
 								</td>
 								<td>
 								<input class="textbox" type="text" name="userName" onkeyup="checkUserName()"/></td></tr>
 								<tr>
-								<td> <h3>Age</h3></td>
+								<td> <h3>Age *</h3></td>
 								<td>
 								<input class ="textbox" type="text" name="age" onkeyup="checkAge()"/></td></tr>
 								<tr>
-								<td> <h3> Phone </h3></td>
+								<td> <h3> Phone *</h3></td>
 								<td>
 								<input class ="textbox" type="text" name="phone"onkeyup="checkPhoneNumber()"/></td></tr>
 								<tr>
-								<td><h3>Email</h3></td>
+								<td><h3>Email *</h3></td>
 								<td>
 								<input class ="textbox" type="text" name="email" onchange="checkEmail()"/></td></tr>
 								<tr>
-								<td><h3>Address</h3></td>
+								<td><h3>Address *</h3></td>
 								<td>
 								<textarea class="textarea" name="address" rows="5",cols="25"></textarea>
 								</td></tr>
-								<tr> <td>
-								<input type='file' accept='image/*' onchange='openFile(event)'/></td></tr>
-							<tr><td>
-							<img id ="output" src="noImage.jpg" width="152" height="229"></img></td></tr>
-						</table>
+
+							
+					</table>
+<p/><p/><p/><p/><p/><p/><p/><p/>	
+
+<table align="center">
+<tr> <td>
+								<input type='file' accept='image/*' onchange='openFile(event)'/></td></tr></table>	
 						
 					</section>		
-			</form>  	
-		<button onclick="saveUserDetails()">Save</button>
+			</form> 
+	<table align="center">
+<tr><td> 	
+		<button onclick="saveUserDetails()" align="center">Save</button><td></tr></table>
 				<script src="ProfilePageJS.js">	</script>
 		</body>
 

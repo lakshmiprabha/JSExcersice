@@ -52,7 +52,7 @@ function checkAge()
 var validAgeRegx=/[0-9]$/,
 	isAgeValid=true;
 //console.log("age" +formObj.age.value);
-	if(formObj.age.value=="")
+	if(formObj.age.value==" ")
 	{
 	isAgeValid=false;
 	}
@@ -118,7 +118,7 @@ function saveUserDetails()
 		phone=formObj.phone.value,
 		email=formObj.email.value,
 		address=formObj.address.value;
-if(checkUserName && checkAge && checkPhoneNumber && checkEmail())
+if(checkUserName() && checkAge() && checkPhoneNumber() && checkEmail())
 {
 //console.log("condtion passs!!!!");
 var output = document.getElementById('output');
@@ -133,6 +133,10 @@ var output = document.getElementById('output');
 	document.getElementById("ProfilePageForm").reset();
 	
 
+}
+else
+{
+alert("Please enter the mandatory details");
 }
 }
 var openFile = function(event)
@@ -173,4 +177,4 @@ console.log("inside checkEmail");
 			}
 	}
 	return isEmailValid;
-}
+} 
