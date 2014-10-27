@@ -23,16 +23,12 @@ padding:5px;
 </head>
 
 <body>
-<form name="SignInForm" onsubmit="validateUserCredentials();">
+<form name="SignInForm" onsubmit="return validateUserCredentials()" action="FeedAndProfile.html"">
 <header>
 <table>
-<tr>
-<td align="right">
-<h1>My Book</h1>
-</td>
 <td>
-<input type="text" value="User Name" id="uName" name="userName" maxlength="8"></input>
-<input type="password" value="Password" name="password" maxlength="6"></input>
+<input type="text" value="User Name" id="uName" name="userName"></input>
+<input type="password" value="Password" name="password"></input>
 <input type="submit" value="Sign Up"></input>
 </td>
 </tr>

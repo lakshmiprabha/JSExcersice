@@ -1,0 +1,45 @@
+#postButton
+{
+color : grey;
+font-family: "Times New Roman", Times, serif;
+font-size:14px;
+width:100px;
+}
+
+.urlrowcolor
+{
+	background-color:#E3F4F4;
+	text-align: right;
+	width: 700px;
+	height: 100px;
+	border-color: black;
+	font-family: verdana,arial,sans-serif;
+	font-size:13px;
+	
+}
+.textrowcolor{
+	background-color: #FFFFD8;
+	text-align: right;
+	width: 700px;
+	border-color: black;
+	font-family: verdana,arial,sans-serif;
+	font-size:13px;
+}
+
+#enterFeed
+{
+text-align: left;
+font-family: "Times New Roman", Times, serif;
+font-style: normal;
+width: 500px;
+border-style:solid;
+border-width: 2px;
+border-color:blue;
+font-size: 14;
+}
+
+#feedContent
+{
+border-collapse:collapse;
+width: 600px;
+}

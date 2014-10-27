@@ -51,14 +51,8 @@ function checkAge()
 //console.log("inside check age");
 var validAgeRegx=/[0-9]$/,
 	isAgeValid=true;
-//console.log("age" +formObj.age.value);
-	if(formObj.age.value==" ")
-	{
-	isAgeValid=false;
-	}
-	else
-	{
-	//console.log("condition1 true");
+	if(formObj.age.value)
+{
 		if(validAgeRegx.test(formObj.age.value))
 		{
 			if((formObj.age.value<=0) ||(formObj.age.value>=100))
@@ -76,7 +70,8 @@ var validAgeRegx=/[0-9]$/,
 		formObj.age.focus();
 		isAgeValid=false;
 		}
-	}
+
+}
 return isAgeValid;
 }
 function checkPhoneNumber()
